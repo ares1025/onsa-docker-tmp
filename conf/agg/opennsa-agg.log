@@ -1,0 +1,873 @@
+2020-05-28 11:56:36Z [-] Loading /conf/agg.tac...
+2020-05-28 11:56:36Z [-] Loaded.
+2020-05-28 11:56:36Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 11:56:36Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 11:56:36Z [-] OpenNSA service initializing
+2020-05-28 11:56:36Z [-] Traceback (most recent call last):
+2020-05-28 11:56:36Z [-]   File "/usr/local/bin/twistd", line 11, in <module>
+2020-05-28 11:56:36Z [-]     sys.exit(run())
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/scripts/twistd.py", line 31, in run
+2020-05-28 11:56:36Z [-]     app.run(runApp, ServerOptions)
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/application/app.py", line 674, in run
+2020-05-28 11:56:36Z [-]     runApp(config)
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/scripts/twistd.py", line 25, in runApp
+2020-05-28 11:56:36Z [-]     runner.run()
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/application/app.py", line 385, in run
+2020-05-28 11:56:36Z [-]     self.postApplication()
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/scripts/_twistd_unix.py", line 254, in postApplication
+2020-05-28 11:56:36Z [-]     self.startApplication(self.application)
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/scripts/_twistd_unix.py", line 453, in startApplication
+2020-05-28 11:56:36Z [-]     app.startApplication(application, not self.config['no_save'])
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/application/app.py", line 690, in startApplication
+2020-05-28 11:56:36Z [-]     service.IService(application).startService()
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/twisted/application/service.py", line 288, in startService
+2020-05-28 11:56:36Z [-]     service.startService()
+2020-05-28 11:56:36Z [-]   File "/opennsa/opennsa/setup.py", line 179, in startService
+2020-05-28 11:56:36Z [-]     database.setupDatabase(vc[config.DATABASE], vc[config.DATABASE_USER], vc[config.DATABASE_PASSWORD], vc[config.DATABASE_HOST], vc[config.SERVICE_ID_START])
+2020-05-28 11:56:36Z [-]   File "/opennsa/opennsa/database.py", line 67, in setupDatabase
+2020-05-28 11:56:36Z [-]     conn = psycopg2.connect(user=user, password=password, database=database, host=host, port=port)
+2020-05-28 11:56:36Z [-]   File "/usr/local/lib/python3.6/dist-packages/psycopg2/__init__.py", line 126, in connect
+2020-05-28 11:56:36Z [-]     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+2020-05-28 11:56:36Z [-] psycopg2.OperationalError: could not connect to server: Connection refused
+2020-05-28 11:56:36Z [-] 	Is the server running on host "10.250.0.101" and accepting
+2020-05-28 11:56:36Z [-] 	TCP/IP connections on port 5432?
+2020-05-28 11:56:36Z [-] 
+2020-05-28 12:02:45Z [-] Loading /conf/agg.tac...
+2020-05-28 12:02:46Z [-] Loaded.
+2020-05-28 12:02:46Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 12:02:46Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 12:02:46Z [-] OpenNSA service initializing
+2020-05-28 12:02:46Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 12:02:46Z [-] Domain aggregate mode enabled
+2020-05-28 12:02:46Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 12:02:46Z [-] Provider     URL: http://0.0.0.0:9443/NSI/services/CS2
+2020-05-28 12:02:46Z [-] REST         URL: http://0.0.0.0:9443/connections
+2020-05-28 12:02:46Z [-] Discovery    URL: http://0.0.0.0:9443/NSI/b'discovery.xml'
+2020-05-28 12:02:46Z [-] Site starting on 9443
+2020-05-28 12:02:46Z [-] Starting factory <twisted.web.server.Site object at 0x7f2ce48de198>
+2020-05-28 12:02:46Z [-] OpenNSA service started
+2020-05-28 12:02:46Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:02:46Z [discovery.Fetcher] Fetching http:/10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:02:46Z [-] Unhandled error in Deferred:
+2020-05-28 12:02:46Z [-] Unhandled Error
+	Traceback (most recent call last):
+	  File "/usr/local/lib/python3.6/dist-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+	    current.result = callback(current.result, *args, **kw)
+	  File "/usr/local/lib/python3.6/dist-packages/twisted/internet/base.py", line 447, in _continueFiring
+	    callable(*args, **kwargs)
+	  File "/usr/local/lib/python3.6/dist-packages/twisted/internet/task.py", line 194, in start
+	    self()
+	  File "/usr/local/lib/python3.6/dist-packages/twisted/internet/task.py", line 239, in __call__
+	    d = defer.maybeDeferred(self.f, *self.a, **self.kw)
+	--- <exception caught here> ---
+	  File "/usr/local/lib/python3.6/dist-packages/twisted/internet/defer.py", line 151, in maybeDeferred
+	    result = f(*args, **kw)
+	  File "/opennsa/opennsa/discovery/fetcher.py", line 58, in fetchDocuments
+	    d = httpclient.httpRequest(peer.url, b'', {}, b'GET', ctx_factory=self.ctx_factory)
+	  File "/opennsa/opennsa/protocols/shared/httpclient.py", line 78, in httpRequest
+	    factory.headers[b'host'] = host + b':' + s_port
+	builtins.UnboundLocalError: local variable 's_port' referenced before assignment
+	
+2020-05-28 12:10:51Z [-] Received SIGTERM, shutting down.
+2020-05-28 12:10:51Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 12:10:51Z [-] Stopping factory <twisted.web.server.Site object at 0x7f2ce48de198>
+2020-05-28 12:10:51Z [-] Main loop terminated.
+2020-05-28 12:10:51Z [-] Server Shut Down.
+2020-05-28 12:38:28Z [-] Loading /conf/agg.tac...
+2020-05-28 12:38:28Z [-] Loaded.
+2020-05-28 12:38:28Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 12:38:28Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 12:38:28Z [-] OpenNSA service initializing
+2020-05-28 12:38:28Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 12:38:28Z [-] Domain aggregate mode enabled
+2020-05-28 12:38:28Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 12:38:28Z [-] Provider     URL: http://0.0.0.0:9443/NSI/services/CS2
+2020-05-28 12:38:28Z [-] REST         URL: http://0.0.0.0:9443/connections
+2020-05-28 12:38:28Z [-] Discovery    URL: http://0.0.0.0:9443/NSI/b'discovery.xml'
+2020-05-28 12:38:28Z [-] Site starting on 9443
+2020-05-28 12:38:28Z [-] Starting factory <twisted.web.server.Site object at 0x7fdc1d0d0198>
+2020-05-28 12:38:28Z [-] OpenNSA service started
+2020-05-28 12:38:28Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:38:28Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:38:28Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (926 bytes)
+2020-05-28 12:38:28Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 12:38:28Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 12:38:28Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 12:38:28Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 12:38:28Z [HTTPClient] Connection refused for b'0.0.0.0':9444. Request URL: http://0.0.0.0:9444/NSI/lab1.onsalab.cesnet.cz:2019.nml.xml
+2020-05-28 12:38:28Z [discovery.Fetcher] NML service retrieval failed for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa/http://0.0.0.0:9444/NSI/lab1.onsalab.cesnet.cz:2019.nml.xml. Reason: Connection was refused by other side: 111: Connection refused..
+2020-05-28 12:38:53Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:38:53Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:38:53Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (926 bytes)
+2020-05-28 12:38:53Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 12:38:53Z [HTTPClient] Connection refused for b'0.0.0.0':9444. Request URL: http://0.0.0.0:9444/NSI/lab1.onsalab.cesnet.cz:2019.nml.xml
+2020-05-28 12:38:53Z [discovery.Fetcher] NML service retrieval failed for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa/http://0.0.0.0:9444/NSI/lab1.onsalab.cesnet.cz:2019.nml.xml. Reason: Connection was refused by other side: 111: Connection refused..
+2020-05-28 12:39:48Z [-] Received SIGTERM, shutting down.
+2020-05-28 12:39:48Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 12:39:48Z [-] Stopping factory <twisted.web.server.Site object at 0x7fdc1d0d0198>
+2020-05-28 12:39:48Z [-] Main loop terminated.
+2020-05-28 12:39:48Z [-] Server Shut Down.
+2020-05-28 12:41:16Z [-] Loading /conf/agg.tac...
+2020-05-28 12:41:17Z [-] Loaded.
+2020-05-28 12:41:17Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 12:41:17Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 12:41:17Z [-] OpenNSA service initializing
+2020-05-28 12:41:17Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 12:41:17Z [-] Domain aggregate mode enabled
+2020-05-28 12:41:17Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 12:41:17Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-05-28 12:41:17Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-05-28 12:41:17Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-05-28 12:41:17Z [-] Site starting on 9443
+2020-05-28 12:41:17Z [-] Starting factory <twisted.web.server.Site object at 0x7fd162288198>
+2020-05-28 12:41:17Z [-] OpenNSA service started
+2020-05-28 12:41:17Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:41:17Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:41:17Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 12:41:17Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 12:41:17Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 12:41:17Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 12:41:17Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 12:41:17Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 12:41:42Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:41:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:41:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 12:41:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 12:41:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 12:44:28Z [Aggregator] 
+2020-05-28 12:44:28Z [Aggregator] Reserve request from urn:ogf:network:OpenNSA-CLI
+2020-05-28 12:44:28Z [Aggregator] - Path <STP lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100> -- <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110> 
+2020-05-28 12:44:28Z [Aggregator] - Trace: None
+2020-05-28 12:44:28Z [Aggregator] reserve: ON-11511aa650: {"type": "provider", "cmd": "reserve", "corrid": "urn:uuid:f841414e-a0e0-11ea-bef3-02420afa0015", "conid": "ON-11511aa650", "global_reservation_id": "mhy-test", "description": "this is a test for me"}
+2020-05-28 12:44:28Z [opennsa.state] reserveChecking: {"type": "reservetrans", "cmd": "reserveChecking", "from": "ReserveStart", "to": "ReserveChecking", "conid": "ON-11511aa650"}
+2020-05-28 12:44:28Z [Aggregator] Connection ON-11511aa650: Aggregated connection: onsalab.cesnet.cz:2019:topology lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100 == lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110
+2020-05-28 12:44:28Z [HTTP] 10.250.0.1 - b'POST' b'/json/connections' b'HTTP/1.1' 500 938 vscode-restclient
+2020-05-28 12:45:50Z [Aggregator] 
+2020-05-28 12:45:50Z [Aggregator] Reserve request from urn:ogf:network:OpenNSA-CLI
+2020-05-28 12:45:50Z [Aggregator] - Path <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100> -- <STP lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110> 
+2020-05-28 12:45:50Z [Aggregator] - Trace: None
+2020-05-28 12:45:50Z [Aggregator] reserve: ON-f1acc1360f: {"type": "provider", "cmd": "reserve", "corrid": "urn:uuid:293ffe66-a0e1-11ea-bef3-02420afa0015", "conid": "ON-f1acc1360f", "global_reservation_id": "mhy-test", "description": "this is a test for me"}
+2020-05-28 12:45:50Z [opennsa.state] reserveChecking: {"type": "reservetrans", "cmd": "reserveChecking", "from": "ReserveStart", "to": "ReserveChecking", "conid": "ON-f1acc1360f"}
+2020-05-28 12:45:50Z [Aggregator] Connection ON-f1acc1360f: Aggregated connection: onsalab.cesnet.cz:2019:topology lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100 == lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110
+2020-05-28 12:45:50Z [Aggregator] Attempting to create path <Link <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100> == <STP lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110>>
+2020-05-28 12:45:50Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveConfirmed". Length: 1580
+2020-05-28 12:45:50Z [Aggregator] 
+2020-05-28 12:45:50Z [Aggregator] reserveConfirm from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa. Connection ID: LA-f8e9a201b1
+2020-05-28 12:45:50Z [Aggregator] reserveConfirmed: LA-f8e9a201b1: {"type": "provider", "cmd": "reserveConfirmed", "conid": "LA-f8e9a201b1", "corrid": "urn:uuid:294259cc-a0e1-11ea-bef3-02420afa0015"}
+2020-05-28 12:45:50Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:45:50Z [Aggregator] subconnection: ON-f1acc1360f/LA-f8e9a201b1/0: {"type": "provider", "cmd": "subconnection", "localdomain": true, "conid": "ON-f1acc1360f", "subconid": "LA-f8e9a201b1", "orderid": 0, "src_network": "lab1.onsalab.cesnet.cz:2019:topology", "src_port": "port1", "src_label": "<Label vlan:100>", "dst_network": "lab1.onsalab.cesnet.cz:2019:topology", "dst_port": "port2", "dst_label": "<Label vlan:110>", "bandwidth": 100}
+2020-05-28 12:45:50Z [Aggregator] Connection ON-f1acc1360f: Reserve acked
+2020-05-28 12:45:50Z [Aggregator] Connection ON-f1acc1360f: All sub connections reserve held, can emit reserveConfirmed
+2020-05-28 12:45:50Z [opennsa.state] reserveHeld: {"type": "reservetrans", "cmd": "reserveHeld", "from": "ReserveChecking", "to": "ReserveHeld", "conid": "ON-f1acc1360f"}
+2020-05-28 12:45:50Z [Aggregator] 
+2020-05-28 12:45:50Z [Aggregator] ReserveCommit request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-f1acc1360f
+2020-05-28 12:45:50Z [Aggregator] reserveCommit: ON-f1acc1360f: {"type": "provider", "cmd": "reserveCommit", "conid": "ON-f1acc1360f", "corrid": "urn:uuid:294ec982-a0e1-11ea-bef3-02420afa0015"}
+2020-05-28 12:45:50Z [opennsa.state] reserveCommit: {"type": "reservetrans", "cmd": "reserveCommit", "from": "ReserveHeld", "to": "ReserveComitting", "conid": "ON-f1acc1360f"}
+2020-05-28 12:45:50Z [Aggregator] reserveConfirmed: ON-f1acc1360f: {"type": "provider", "cmd": "reserveConfirmed", "conid": "ON-f1acc1360f", "corrid": "urn:uuid:294ec3ec-a0e1-11ea-bef3-02420afa0015"}
+2020-05-28 12:45:50Z [Aggregator] Connection ON-f1acc1360f: ReserveCommit messages acked
+2020-05-28 12:45:50Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveCommitConfirmed". Length: 809
+2020-05-28 12:45:50Z [Aggregator] 
+2020-05-28 12:45:50Z [Aggregator] ReserveCommit Confirmed for sub connection LA-f8e9a201b1. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-05-28 12:45:50Z [Aggregator] reserveCommitConfirmed: LA-f8e9a201b1: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "LA-f8e9a201b1", "corrid": "urn:uuid:294fb95a-a0e1-11ea-bef3-02420afa0015"}
+2020-05-28 12:45:50Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:45:50Z [opennsa.state] reserved: {"type": "reservetrans", "cmd": "reserved", "from": "ReserveComitting", "to": "ReserveStart", "conid": "ON-f1acc1360f"}
+2020-05-28 12:45:50Z [HTTP] 10.250.0.1 - b'POST' b'/json/connections' b'HTTP/1.1' 201 36 vscode-restclient
+2020-05-28 12:45:50Z [Aggregator] reserveCommitConfirmed: ON-f1acc1360f: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "ON-f1acc1360f", "corrid": "urn:uuid:295462e8-a0e1-11ea-bef3-02420afa0015"}
+2020-05-28 12:46:36Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-f1acc1360f']. GID: None
+2020-05-28 12:46:36Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3880
+2020-05-28 12:46:36Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-05-28 12:46:36Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-05-28 12:46:36Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:46:36Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-f1acc1360f?recurse=1' b'HTTP/1.1' 200 2447 vscode-restclient
+2020-05-28 12:47:47Z [Aggregator] 
+2020-05-28 12:47:47Z [Aggregator] Provision request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-f1acc1360f
+2020-05-28 12:47:47Z [Aggregator] provision: ON-f1acc1360f: {"type": "provider", "cmd": "provision", "conid": "ON-f1acc1360f"}
+2020-05-28 12:47:47Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "ON-f1acc1360f"}
+2020-05-28 12:47:47Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "LA-f8e9a201b1"}
+2020-05-28 12:47:47Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/provisionConfirmed". Length: 801
+2020-05-28 12:47:47Z [Aggregator] 
+2020-05-28 12:47:47Z [Aggregator] Provision Confirmed for sub connection LA-f8e9a201b1. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-05-28 12:47:47Z [Aggregator] provisionConfirmed: LA-f8e9a201b1: {"type": "provider", "cmd": "provisionConfirmed", "conid": "LA-f8e9a201b1"}
+2020-05-28 12:47:47Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "LA-f8e9a201b1"}
+2020-05-28 12:47:47Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:47:47Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "ON-f1acc1360f"}
+2020-05-28 12:47:47Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-f1acc1360f']. GID: None
+2020-05-28 12:47:47Z [Aggregator] provisionConfirmed: ON-f1acc1360f: {"type": "provider", "cmd": "provisionConfirmed", "conid": "ON-f1acc1360f"}
+2020-05-28 12:47:47Z [HTTP] 10.250.0.1 - b'PUT' b'/json/connections/ON-f1acc1360f?cmd=PROVISION' b'HTTP/1.1' 200 826 vscode-restclient
+2020-05-28 12:47:53Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1087
+2020-05-28 12:47:53Z [Aggregator] Data plane change for sub connection: LA-f8e9a201b1 Active: True, version 0, consistent: True
+2020-05-28 12:47:53Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:47:53Z [Aggregator] Connection ON-f1acc1360f: Aggregated data plane status: Active True, version 0, consistent True
+2020-05-28 12:47:59Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-f1acc1360f']. GID: None
+2020-05-28 12:47:59Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3883
+2020-05-28 12:47:59Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-05-28 12:47:59Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-05-28 12:47:59Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 12:47:59Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-f1acc1360f?recurse=1' b'HTTP/1.1' 200 2456 vscode-restclient
+2020-05-28 12:48:57Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-f1acc1360f']. GID: None
+2020-05-28 12:48:57Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-f1acc1360f' b'HTTP/1.1' 200 826 vscode-restclient
+2020-05-28 12:51:42Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 12:51:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 12:51:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 12:51:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 12:51:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 12:52:43Z [HTTP] 192.168.0.37 - b'GET' b'/NSI/discovery.xml' b'HTTP/1.1' 200 788 curl/7.68.0
+2020-05-28 12:57:43Z [-] Received SIGTERM, shutting down.
+2020-05-28 12:57:43Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 12:57:43Z [-] Stopping factory <twisted.web.server.Site object at 0x7fd162288198>
+2020-05-28 12:57:43Z [-] Main loop terminated.
+2020-05-28 12:57:43Z [-] Server Shut Down.
+2020-05-28 13:00:34Z [-] Loading /conf/agg.tac...
+2020-05-28 13:00:34Z [-] Loaded.
+2020-05-28 13:00:34Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 13:00:34Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 13:00:34Z [-] OpenNSA service initializing
+2020-05-28 13:00:34Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 13:00:34Z [-] Domain aggregate mode enabled
+2020-05-28 13:00:34Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:00:34Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-05-28 13:00:34Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-05-28 13:00:34Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-05-28 13:00:34Z [-] Site starting on 9443
+2020-05-28 13:00:34Z [-] Starting factory <twisted.web.server.Site object at 0x7f33a5708198>
+2020-05-28 13:00:34Z [-] OpenNSA service started
+2020-05-28 13:00:34Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:00:34Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:00:34Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:00:34Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 13:00:34Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 13:00:34Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:00:34Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:00:34Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:00:59Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:00:59Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:00:59Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:00:59Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 13:00:59Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:03:25Z [-] Received SIGTERM, shutting down.
+2020-05-28 13:03:25Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 13:03:25Z [-] Stopping factory <twisted.web.server.Site object at 0x7f33a5708198>
+2020-05-28 13:03:25Z [-] Main loop terminated.
+2020-05-28 13:03:25Z [-] Server Shut Down.
+2020-05-28 13:05:18Z [-] Loading /conf/agg.tac...
+2020-05-28 13:05:18Z [-] Loaded.
+2020-05-28 13:05:18Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 13:05:18Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 13:05:18Z [-] OpenNSA service initializing
+2020-05-28 13:05:18Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 13:05:18Z [-] Domain aggregate mode enabled
+2020-05-28 13:05:18Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:05:18Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-05-28 13:05:18Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-05-28 13:05:18Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-05-28 13:05:18Z [-] Site starting on 9443
+2020-05-28 13:05:18Z [-] Starting factory <twisted.web.server.Site object at 0x7f9cdf73d198>
+2020-05-28 13:05:18Z [-] OpenNSA service started
+2020-05-28 13:05:18Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:05:18Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:05:18Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:05:18Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 13:05:18Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 13:05:18Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:05:18Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:05:18Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:05:43Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:05:43Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:05:43Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:05:43Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 13:05:43Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:08:26Z [-] Received SIGTERM, shutting down.
+2020-05-28 13:08:26Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 13:08:26Z [-] Stopping factory <twisted.web.server.Site object at 0x7f9cdf73d198>
+2020-05-28 13:08:26Z [-] Main loop terminated.
+2020-05-28 13:08:26Z [-] Server Shut Down.
+2020-05-28 13:09:14Z [-] Loading /conf/agg.tac...
+2020-05-28 13:09:15Z [-] Loaded.
+2020-05-28 13:09:15Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 13:09:15Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 13:09:15Z [-] OpenNSA service initializing
+2020-05-28 13:09:15Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 13:09:15Z [-] Domain aggregate mode enabled
+2020-05-28 13:09:15Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:09:15Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-05-28 13:09:15Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-05-28 13:09:15Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-05-28 13:09:15Z [-] Site starting on 9443
+2020-05-28 13:09:15Z [-] Starting factory <twisted.web.server.Site object at 0x7fcb592d4198>
+2020-05-28 13:09:15Z [-] OpenNSA service started
+2020-05-28 13:09:15Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:09:15Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:09:15Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:09:15Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 13:09:15Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 13:09:15Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:09:15Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:09:15Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:09:40Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:09:40Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:09:40Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:09:40Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 13:09:40Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:11:57Z [-] Received SIGTERM, shutting down.
+2020-05-28 13:11:57Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 13:11:57Z [-] Stopping factory <twisted.web.server.Site object at 0x7fcb592d4198>
+2020-05-28 13:11:57Z [-] Main loop terminated.
+2020-05-28 13:11:57Z [-] Server Shut Down.
+2020-05-28 13:15:53Z [-] Loading /conf/agg.tac...
+2020-05-28 13:15:54Z [-] Loaded.
+2020-05-28 13:15:54Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-05-28 13:15:54Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-05-28 13:15:54Z [-] OpenNSA service initializing
+2020-05-28 13:15:54Z [-] No backend specified. Running in aggregator-only mode
+2020-05-28 13:15:54Z [-] Domain aggregate mode enabled
+2020-05-28 13:15:54Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:15:54Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-05-28 13:15:54Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-05-28 13:15:54Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-05-28 13:15:54Z [-] Site starting on 9443
+2020-05-28 13:15:54Z [-] Starting factory <twisted.web.server.Site object at 0x7f81d0472198>
+2020-05-28 13:15:54Z [-] OpenNSA service started
+2020-05-28 13:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:15:54Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-05-28 13:15:54Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-05-28 13:15:54Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:15:54Z [DiscoveryService] Generating new discovery xml resource
+2020-05-28 13:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:16:19Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:16:19Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:16:19Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:16:19Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 13:16:19Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 13:20:08Z [Aggregator] 
+2020-05-28 13:20:08Z [Aggregator] Reserve request from urn:ogf:network:OpenNSA-CLI
+2020-05-28 13:20:08Z [Aggregator] - Path <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100> -- <STP lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110> 
+2020-05-28 13:20:08Z [Aggregator] - Trace: None
+2020-05-28 13:20:08Z [Aggregator] reserve: ON-4f93871f9e: {"type": "provider", "cmd": "reserve", "corrid": "urn:uuid:f3b7a244-a0e5-11ea-a502-02420afa0015", "conid": "ON-4f93871f9e", "global_reservation_id": "mhy-test", "description": "this is a test for me"}
+2020-05-28 13:20:08Z [opennsa.state] reserveChecking: {"type": "reservetrans", "cmd": "reserveChecking", "from": "ReserveStart", "to": "ReserveChecking", "conid": "ON-4f93871f9e"}
+2020-05-28 13:20:08Z [Aggregator] Connection ON-4f93871f9e: Aggregated connection: onsalab.cesnet.cz:2019:topology lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100 == lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110
+2020-05-28 13:20:08Z [Aggregator] Attempting to create path <Link <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=100> == <STP lab1.onsalab.cesnet.cz:2019:topology:port2?vlan=110>>
+2020-05-28 13:20:08Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveConfirmed". Length: 1580
+2020-05-28 13:20:08Z [Aggregator] 
+2020-05-28 13:20:08Z [Aggregator] reserveConfirm from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa. Connection ID: LA-79c7ff8b26
+2020-05-28 13:20:08Z [Aggregator] reserveConfirmed: LA-79c7ff8b26: {"type": "provider", "cmd": "reserveConfirmed", "conid": "LA-79c7ff8b26", "corrid": "urn:uuid:f3bd1cce-a0e5-11ea-a502-02420afa0015"}
+2020-05-28 13:20:08Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:20:08Z [Aggregator] subconnection: ON-4f93871f9e/LA-79c7ff8b26/0: {"type": "provider", "cmd": "subconnection", "localdomain": true, "conid": "ON-4f93871f9e", "subconid": "LA-79c7ff8b26", "orderid": 0, "src_network": "lab1.onsalab.cesnet.cz:2019:topology", "src_port": "port1", "src_label": "<Label vlan:100>", "dst_network": "lab1.onsalab.cesnet.cz:2019:topology", "dst_port": "port2", "dst_label": "<Label vlan:110>", "bandwidth": 100}
+2020-05-28 13:20:08Z [Aggregator] Connection ON-4f93871f9e: Reserve acked
+2020-05-28 13:20:08Z [Aggregator] Connection ON-4f93871f9e: All sub connections reserve held, can emit reserveConfirmed
+2020-05-28 13:20:08Z [opennsa.state] reserveHeld: {"type": "reservetrans", "cmd": "reserveHeld", "from": "ReserveChecking", "to": "ReserveHeld", "conid": "ON-4f93871f9e"}
+2020-05-28 13:20:08Z [Aggregator] 
+2020-05-28 13:20:08Z [Aggregator] ReserveCommit request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-4f93871f9e
+2020-05-28 13:20:08Z [Aggregator] reserveCommit: ON-4f93871f9e: {"type": "provider", "cmd": "reserveCommit", "conid": "ON-4f93871f9e", "corrid": "urn:uuid:f3c823a8-a0e5-11ea-a502-02420afa0015"}
+2020-05-28 13:20:08Z [opennsa.state] reserveCommit: {"type": "reservetrans", "cmd": "reserveCommit", "from": "ReserveHeld", "to": "ReserveComitting", "conid": "ON-4f93871f9e"}
+2020-05-28 13:20:08Z [Aggregator] reserveConfirmed: ON-4f93871f9e: {"type": "provider", "cmd": "reserveConfirmed", "conid": "ON-4f93871f9e", "corrid": "urn:uuid:f3c818b8-a0e5-11ea-a502-02420afa0015"}
+2020-05-28 13:20:08Z [Aggregator] Connection ON-4f93871f9e: ReserveCommit messages acked
+2020-05-28 13:20:08Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveCommitConfirmed". Length: 809
+2020-05-28 13:20:08Z [Aggregator] 
+2020-05-28 13:20:08Z [Aggregator] ReserveCommit Confirmed for sub connection LA-79c7ff8b26. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-05-28 13:20:08Z [Aggregator] reserveCommitConfirmed: LA-79c7ff8b26: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "LA-79c7ff8b26", "corrid": "urn:uuid:f3c90a84-a0e5-11ea-a502-02420afa0015"}
+2020-05-28 13:20:08Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:20:08Z [opennsa.state] reserved: {"type": "reservetrans", "cmd": "reserved", "from": "ReserveComitting", "to": "ReserveStart", "conid": "ON-4f93871f9e"}
+2020-05-28 13:20:08Z [HTTP] 10.250.0.1 - b'POST' b'/json/connections' b'HTTP/1.1' 201 36 vscode-restclient
+2020-05-28 13:20:08Z [Aggregator] reserveCommitConfirmed: ON-4f93871f9e: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "ON-4f93871f9e", "corrid": "urn:uuid:f3cd6336-a0e5-11ea-a502-02420afa0015"}
+2020-05-28 13:20:49Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:20:49Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3880
+2020-05-28 13:20:49Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-05-28 13:20:49Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-05-28 13:20:49Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:20:49Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-4f93871f9e?recurse=1' b'HTTP/1.1' 200 2447 vscode-restclient
+2020-05-28 13:20:57Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:20:57Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-4f93871f9e' b'HTTP/1.1' 200 823 vscode-restclient
+2020-05-28 13:21:01Z [Aggregator] 
+2020-05-28 13:21:01Z [Aggregator] Provision request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-4f93871f9e
+2020-05-28 13:21:01Z [Aggregator] provision: ON-4f93871f9e: {"type": "provider", "cmd": "provision", "conid": "ON-4f93871f9e"}
+2020-05-28 13:21:01Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "ON-4f93871f9e"}
+2020-05-28 13:21:01Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "LA-79c7ff8b26"}
+2020-05-28 13:21:01Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/provisionConfirmed". Length: 801
+2020-05-28 13:21:01Z [Aggregator] 
+2020-05-28 13:21:01Z [Aggregator] Provision Confirmed for sub connection LA-79c7ff8b26. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-05-28 13:21:01Z [Aggregator] provisionConfirmed: LA-79c7ff8b26: {"type": "provider", "cmd": "provisionConfirmed", "conid": "LA-79c7ff8b26"}
+2020-05-28 13:21:01Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "LA-79c7ff8b26"}
+2020-05-28 13:21:01Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:21:01Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "ON-4f93871f9e"}
+2020-05-28 13:21:01Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:21:01Z [Aggregator] provisionConfirmed: ON-4f93871f9e: {"type": "provider", "cmd": "provisionConfirmed", "conid": "ON-4f93871f9e"}
+2020-05-28 13:21:01Z [HTTP] 10.250.0.1 - b'PUT' b'/json/connections/ON-4f93871f9e?cmd=PROVISION' b'HTTP/1.1' 200 826 vscode-restclient
+2020-05-28 13:21:07Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1087
+2020-05-28 13:21:07Z [Aggregator] Data plane change for sub connection: LA-79c7ff8b26 Active: True, version 0, consistent: True
+2020-05-28 13:21:07Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:21:07Z [Aggregator] Connection ON-4f93871f9e: Aggregated data plane status: Active True, version 0, consistent True
+2020-05-28 13:21:08Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:21:08Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-4f93871f9e' b'HTTP/1.1' 200 826 vscode-restclient
+2020-05-28 13:23:11Z [Aggregator] 
+2020-05-28 13:23:11Z [Aggregator] Terminate request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-4f93871f9e
+2020-05-28 13:23:11Z [Aggregator] terminate: ON-4f93871f9e: {"type": "provider", "cmd": "terminate", "conid": "ON-4f93871f9e"}
+2020-05-28 13:23:11Z [opennsa.state] terminating: {"type": "lifecycletrans", "cmd": "terminating", "from": "Created", "to": "Terminating", "conid": "ON-4f93871f9e"}
+2020-05-28 13:23:16Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1088
+2020-05-28 13:23:16Z [Aggregator] Data plane change for sub connection: LA-79c7ff8b26 Active: False, version 0, consistent: True
+2020-05-28 13:23:16Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:23:16Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/terminateConfirmed". Length: 801
+2020-05-28 13:23:16Z [Aggregator] terminateConfirmed: LA-79c7ff8b26: {"type": "provider", "cmd": "terminateConfirmed", "conid": "LA-79c7ff8b26"}
+2020-05-28 13:23:16Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:23:16Z [Aggregator] Connection ON-4f93871f9e: Aggregated data plane status: Active False, version 0, consistent True
+2020-05-28 13:23:16Z [Aggregator] Connection ON-4f93871f9e: All sub connections(1) acked terminated
+2020-05-28 13:23:16Z [opennsa.state] terminated: {"type": "lifecycletrans", "cmd": "terminated", "from": "Terminating", "to": "Terminated", "conid": "ON-4f93871f9e"}
+2020-05-28 13:23:16Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:23:16Z [Aggregator] terminateConfirmed: ON-4f93871f9e: {"type": "provider", "cmd": "terminateConfirmed", "conid": "ON-4f93871f9e"}
+2020-05-28 13:23:16Z [HTTP] 10.250.0.1 - b'PUT' b'/json/connections/ON-4f93871f9e?cmd=TERMINATE' b'HTTP/1.1' 200 829 vscode-restclient
+2020-05-28 13:23:26Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-4f93871f9e']. GID: None
+2020-05-28 13:23:26Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3891
+2020-05-28 13:23:26Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-05-28 13:23:26Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-05-28 13:23:26Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-05-28 13:23:26Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-4f93871f9e?recurse=1' b'HTTP/1.1' 200 2465 vscode-restclient
+2020-05-28 13:26:19Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 13:26:19Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 13:26:19Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 13:26:19Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 13:26:19Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 14:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 14:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 14:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 14:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 14:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 15:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 15:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 15:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 15:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 15:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 16:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 16:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 16:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 16:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 16:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 17:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 17:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 17:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 17:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 17:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 20:42:40Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 20:42:40Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 20:42:40Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 20:42:40Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 20:42:40Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 21:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 21:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 21:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 21:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 21:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 22:15:54Z [discovery.Fetcher] Fetching 1 documents.
+2020-05-28 22:15:54Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-05-28 22:15:54Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-05-28 22:15:54Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-05-28 22:15:54Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-05-28 22:24:49Z [-] Received SIGTERM, shutting down.
+2020-05-28 22:24:49Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-05-28 22:24:49Z [-] Stopping factory <twisted.web.server.Site object at 0x7f81d0472198>
+2020-05-28 22:24:49Z [-] Main loop terminated.
+2020-05-28 22:24:49Z [-] Server Shut Down.
+2020-06-02 13:14:24Z [-] Loading /conf/agg.tac...
+2020-06-02 13:14:25Z [-] Loaded.
+2020-06-02 13:14:25Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-06-02 13:14:25Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-06-02 13:14:25Z [-] OpenNSA service initializing
+2020-06-02 13:14:25Z [-] No backend specified. Running in aggregator-only mode
+2020-06-02 13:14:25Z [-] Domain aggregate mode enabled
+2020-06-02 13:14:25Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:14:25Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-06-02 13:14:25Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-06-02 13:14:25Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-06-02 13:14:25Z [-] Site starting on 9443
+2020-06-02 13:14:25Z [-] Starting factory <twisted.web.server.Site object at 0x7f777591f198>
+2020-06-02 13:14:25Z [-] OpenNSA service started
+2020-06-02 13:14:25Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 13:14:25Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 13:14:25Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 13:14:25Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-06-02 13:14:25Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-06-02 13:14:25Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:14:25Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:14:25Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:14:50Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 13:14:50Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 13:14:50Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 13:14:50Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-06-02 13:14:50Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:20:48Z [-] Received SIGINT, shutting down.
+2020-06-02 13:20:48Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-06-02 13:20:48Z [-] Stopping factory <twisted.web.server.Site object at 0x7f777591f198>
+2020-06-02 13:20:48Z [-] Main loop terminated.
+2020-06-02 13:20:48Z [-] Server Shut Down.
+2020-06-02 13:21:10Z [-] Loading /conf/agg.tac...
+2020-06-02 13:21:11Z [-] Loaded.
+2020-06-02 13:21:11Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-06-02 13:21:11Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-06-02 13:21:11Z [-] OpenNSA service initializing
+2020-06-02 13:21:11Z [-] No backend specified. Running in aggregator-only mode
+2020-06-02 13:21:11Z [-] Domain aggregate mode enabled
+2020-06-02 13:21:11Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:21:11Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-06-02 13:21:11Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-06-02 13:21:11Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-06-02 13:21:11Z [-] Site starting on 9443
+2020-06-02 13:21:11Z [-] Starting factory <twisted.web.server.Site object at 0x7f7f14503198>
+2020-06-02 13:21:11Z [-] OpenNSA service started
+2020-06-02 13:21:11Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 13:21:11Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 13:21:11Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 13:21:11Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-06-02 13:21:11Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-06-02 13:21:11Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:21:11Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:21:11Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:21:36Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 13:21:36Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 13:21:36Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 13:21:36Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-06-02 13:21:36Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:26:53Z [-] Received SIGTERM, shutting down.
+2020-06-02 13:26:53Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-06-02 13:26:53Z [-] Stopping factory <twisted.web.server.Site object at 0x7f7f14503198>
+2020-06-02 13:26:53Z [-] Main loop terminated.
+2020-06-02 13:26:53Z [-] Server Shut Down.
+2020-06-02 13:27:00Z [-] Loading /conf/agg.tac...
+2020-06-02 13:27:01Z [-] Loaded.
+2020-06-02 13:27:01Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-06-02 13:27:01Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-06-02 13:27:01Z [-] OpenNSA service initializing
+2020-06-02 13:27:01Z [-] No backend specified. Running in aggregator-only mode
+2020-06-02 13:27:01Z [-] Domain aggregate mode enabled
+2020-06-02 13:27:01Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:27:01Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-06-02 13:27:01Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-06-02 13:27:01Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-06-02 13:27:01Z [-] Site starting on 9443
+2020-06-02 13:27:01Z [-] Starting factory <twisted.web.server.Site object at 0x7f6e716a3198>
+2020-06-02 13:27:01Z [-] OpenNSA service started
+2020-06-02 13:27:01Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 13:27:01Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 13:27:01Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 13:27:01Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-06-02 13:27:01Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-06-02 13:27:01Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:27:01Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 13:27:01Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 13:27:11Z [-] Received SIGTERM, shutting down.
+2020-06-02 13:27:11Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-06-02 13:27:11Z [-] Stopping factory <twisted.web.server.Site object at 0x7f6e716a3198>
+2020-06-02 13:27:11Z [-] Main loop terminated.
+2020-06-02 13:27:11Z [-] Server Shut Down.
+2020-06-02 15:23:53Z [-] Loading /conf/agg.tac...
+2020-06-02 15:23:53Z [-] Loaded.
+2020-06-02 15:23:53Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-06-02 15:23:53Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-06-02 15:23:53Z [-] OpenNSA service initializing
+2020-06-02 15:23:53Z [-] No backend specified. Running in aggregator-only mode
+2020-06-02 15:23:53Z [-] Domain aggregate mode enabled
+2020-06-02 15:23:53Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 15:23:53Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-06-02 15:23:53Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-06-02 15:23:53Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-06-02 15:23:53Z [-] Site starting on 9443
+2020-06-02 15:23:53Z [-] Starting factory <twisted.web.server.Site object at 0x7f2170fce198>
+2020-06-02 15:23:53Z [-] OpenNSA service started
+2020-06-02 15:23:53Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 15:23:53Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 15:23:53Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 15:23:53Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-06-02 15:23:53Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-06-02 15:23:53Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-06-02 15:23:53Z [DiscoveryService] Generating new discovery xml resource
+2020-06-02 15:23:53Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 15:24:18Z [discovery.Fetcher] Fetching 1 documents.
+2020-06-02 15:24:18Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-06-02 15:24:18Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-06-02 15:24:18Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-06-02 15:24:18Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-06-02 15:24:35Z [-] Received SIGTERM, shutting down.
+2020-06-02 15:24:35Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-06-02 15:24:35Z [-] Stopping factory <twisted.web.server.Site object at 0x7f2170fce198>
+2020-06-02 15:24:35Z [-] Main loop terminated.
+2020-06-02 15:24:35Z [-] Server Shut Down.
+2020-07-24 11:18:11Z [-] Loading /conf/agg.tac...
+2020-07-24 11:18:12Z [-] Loaded.
+2020-07-24 11:18:12Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-07-24 11:18:12Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-07-24 11:18:12Z [-] OpenNSA service initializing
+2020-07-24 11:18:12Z [-] No backend specified. Running in aggregator-only mode
+2020-07-24 11:18:12Z [-] Domain aggregate mode enabled
+2020-07-24 11:18:12Z [DiscoveryService] Generating new discovery xml resource
+2020-07-24 11:18:12Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-07-24 11:18:12Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-07-24 11:18:12Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-07-24 11:18:12Z [-] Site starting on 9443
+2020-07-24 11:18:12Z [-] Starting factory <twisted.web.server.Site object at 0x7fdb18fe61d0>
+2020-07-24 11:18:12Z [-] OpenNSA service started
+2020-07-24 11:18:12Z [discovery.Fetcher] Fetching 1 documents.
+2020-07-24 11:18:12Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:18:12Z [HTTPClient] Connection refused for b'10.250.0.22':9444. Request URL: http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:18:12Z [discovery.Fetcher] Topology retrieval failed for http://10.250.0.22:9444/NSI/discovery.xml. Reason: Connection was refused by other side: 111: Connection refused..
+2020-07-24 11:18:37Z [discovery.Fetcher] Fetching 1 documents.
+2020-07-24 11:18:37Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:18:37Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 11:18:37Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-07-24 11:18:37Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-07-24 11:18:37Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:18:37Z [DiscoveryService] Generating new discovery xml resource
+2020-07-24 11:18:37Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:20:21Z [-] Received SIGTERM, shutting down.
+2020-07-24 11:20:21Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-07-24 11:20:21Z [-] Stopping factory <twisted.web.server.Site object at 0x7fdb18fe61d0>
+2020-07-24 11:20:21Z [-] Main loop terminated.
+2020-07-24 11:20:21Z [-] Server Shut Down.
+2020-07-24 11:21:41Z [-] Loading /conf/agg.tac...
+2020-07-24 11:21:42Z [-] Loaded.
+2020-07-24 11:21:42Z [-] twistd 20.3.0 (/usr/bin/python3 3.6.9) starting up.
+2020-07-24 11:21:42Z [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2020-07-24 11:21:42Z [-] OpenNSA service initializing
+2020-07-24 11:21:42Z [-] No backend specified. Running in aggregator-only mode
+2020-07-24 11:21:42Z [-] Domain aggregate mode enabled
+2020-07-24 11:21:42Z [DiscoveryService] Generating new discovery xml resource
+2020-07-24 11:21:42Z [-] Provider     URL: http://10.250.0.21:9443/NSI/services/CS2
+2020-07-24 11:21:42Z [-] REST         URL: http://10.250.0.21:9443/connections
+2020-07-24 11:21:42Z [-] Discovery    URL: http://10.250.0.21:9443/NSI/b'discovery.xml'
+2020-07-24 11:21:42Z [-] Site starting on 9443
+2020-07-24 11:21:42Z [-] Starting factory <twisted.web.server.Site object at 0x7fb4c89e41d0>
+2020-07-24 11:21:42Z [-] OpenNSA service started
+2020-07-24 11:21:42Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 11:21:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:21:42Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 11:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 11:21:42Z [providerregistry] Creating new provider for urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa
+2020-07-24 11:21:42Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa>
+2020-07-24 11:21:42Z [discovery.Fetcher] Adding node lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:21:42Z [DiscoveryService] Generating new discovery xml resource
+2020-07-24 11:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 11:21:42Z [providerregistry] Creating new provider for urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa
+2020-07-24 11:21:42Z [providerregistry] Spawned new provider for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa>
+2020-07-24 11:21:42Z [discovery.Fetcher] Adding node lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:21:42Z [DiscoveryService] Generating new discovery xml resource
+2020-07-24 11:21:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:21:42Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:22:07Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 11:22:07Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:22:07Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 11:22:07Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 11:22:07Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 11:22:07Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 11:22:07Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 11:22:07Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:22:07Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:24:17Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:25:50Z [Aggregator] 
+2020-07-24 11:25:50Z [Aggregator] Reserve request from urn:ogf:network:mhy-ide-test:nsa
+2020-07-24 11:25:50Z [Aggregator] - Path <STP lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100> -- <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110> 
+2020-07-24 11:25:50Z [Aggregator] - Trace: None
+2020-07-24 11:25:50Z [Aggregator] reserve: ON-533bd6c387: {"type": "provider", "cmd": "reserve", "corrid": "urn:uuid:6dc8d7f6-cda0-11ea-b325-02420afa0015", "conid": "ON-533bd6c387", "global_reservation_id": "my_gri", "description": "this is a test"}
+2020-07-24 11:25:50Z [opennsa.state] reserveChecking: {"type": "reservetrans", "cmd": "reserveChecking", "from": "ReserveStart", "to": "ReserveChecking", "conid": "ON-533bd6c387"}
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Aggregated connection: onsalab.cesnet.cz:2019:topology lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100 == lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110
+2020-07-24 11:25:50Z [Aggregator] Attempting to create path <Link <STP lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100> == <STP lab2.onsalab.cesnet.cz:2019:topology:lab1?mpls=1-3999>> -> <Link <STP lab1.onsalab.cesnet.cz:2019:topology:lab2?mpls=1-3999> == <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110>>
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Error during reserve request to urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Error message: Invalid request: Start time in the past (Startime: 2019-07-29 15:00:00, Delta: 360 days, 20:25:50.897548)
+2020-07-24 11:25:50Z [Aggregator] Trace:
+2020-07-24 11:25:50Z [-] Traceback (most recent call last):
+2020-07-24 11:25:50Z [-] Failure: opennsa.error.PayloadError: Invalid request: Start time in the past (Startime: 2019-07-29 15:00:00, Delta: 360 days, 20:25:50.897548)
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Error during reserve request to urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Error message: Invalid request: Start time in the past (Startime: 2019-07-29 15:00:00, Delta: 360 days, 20:25:50.938070)
+2020-07-24 11:25:50Z [Aggregator] Trace:
+2020-07-24 11:25:50Z [-] Traceback (most recent call last):
+2020-07-24 11:25:50Z [-] Failure: opennsa.error.PayloadError: Invalid request: Start time in the past (Startime: 2019-07-29 15:00:00, Delta: 360 days, 20:25:50.938070)
+2020-07-24 11:25:50Z [Aggregator] Connection ON-533bd6c387: Reserve failed
+2020-07-24 11:25:50Z [opennsa.state] terminating: {"type": "lifecycletrans", "cmd": "terminating", "from": "Created", "to": "Terminating", "conid": "ON-533bd6c387"}
+2020-07-24 11:25:50Z [opennsa.state] terminated: {"type": "lifecycletrans", "cmd": "terminated", "from": "Terminating", "to": "Terminated", "conid": "ON-533bd6c387"}
+2020-07-24 11:25:50Z [HTTP] 10.250.0.1 - b'POST' b'/json/connections' b'HTTP/1.1' 500 1186 vscode-restclient
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] Reserve request from urn:ogf:network:mhy-ide-test:nsa
+2020-07-24 11:27:19Z [Aggregator] - Path <STP lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100> -- <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110> 
+2020-07-24 11:27:19Z [Aggregator] - Trace: None
+2020-07-24 11:27:19Z [Aggregator] reserve: ON-28870ad5c5: {"type": "provider", "cmd": "reserve", "corrid": "urn:uuid:a2572644-cda0-11ea-b325-02420afa0015", "conid": "ON-28870ad5c5", "global_reservation_id": "mhy_vsCode", "description": "this is a test"}
+2020-07-24 11:27:19Z [opennsa.state] reserveChecking: {"type": "reservetrans", "cmd": "reserveChecking", "from": "ReserveStart", "to": "ReserveChecking", "conid": "ON-28870ad5c5"}
+2020-07-24 11:27:19Z [Aggregator] Connection ON-28870ad5c5: Aggregated connection: onsalab.cesnet.cz:2019:topology lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100 == lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110
+2020-07-24 11:27:19Z [Aggregator] Attempting to create path <Link <STP lab2.onsalab.cesnet.cz:2019:topology:port1?vlan=100> == <STP lab2.onsalab.cesnet.cz:2019:topology:lab1?mpls=1-3999>> -> <Link <STP lab1.onsalab.cesnet.cz:2019:topology:lab2?mpls=1-3999> == <STP lab1.onsalab.cesnet.cz:2019:topology:port1?vlan=110>>
+2020-07-24 11:27:19Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveConfirmed". Length: 1572
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] reserveConfirm from urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa. Connection ID: LA-7fdc3349f2
+2020-07-24 11:27:19Z [Aggregator] reserveConfirmed: LA-7fdc3349f2: {"type": "provider", "cmd": "reserveConfirmed", "conid": "LA-7fdc3349f2", "corrid": "urn:uuid:a25b69f2-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:19Z [Aggregator] subconnection: ON-28870ad5c5/LA-7fdc3349f2/0: {"type": "provider", "cmd": "subconnection", "localdomain": true, "conid": "ON-28870ad5c5", "subconid": "LA-7fdc3349f2", "orderid": 0, "src_network": "lab2.onsalab.cesnet.cz:2019:topology", "src_port": "port1", "src_label": "<Label vlan:100>", "dst_network": "lab2.onsalab.cesnet.cz:2019:topology", "dst_port": "lab1", "dst_label": "<Label mpls:1>", "bandwidth": 100}
+2020-07-24 11:27:19Z [Aggregator] Connection ON-28870ad5c5: Still missing 1 reserveConfirmed call(s) to aggregate
+2020-07-24 11:27:19Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveConfirmed". Length: 1572
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] reserveConfirm from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa. Connection ID: LA-9629735a12
+2020-07-24 11:27:19Z [Aggregator] reserveConfirmed: LA-9629735a12: {"type": "provider", "cmd": "reserveConfirmed", "conid": "LA-9629735a12", "corrid": "urn:uuid:a26cf97e-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:19Z [Aggregator] subconnection: ON-28870ad5c5/LA-9629735a12/1: {"type": "provider", "cmd": "subconnection", "localdomain": true, "conid": "ON-28870ad5c5", "subconid": "LA-9629735a12", "orderid": 1, "src_network": "lab1.onsalab.cesnet.cz:2019:topology", "src_port": "lab2", "src_label": "<Label mpls:1>", "dst_network": "lab1.onsalab.cesnet.cz:2019:topology", "dst_port": "port1", "dst_label": "<Label vlan:110>", "bandwidth": 100}
+2020-07-24 11:27:19Z [Aggregator] Connection ON-28870ad5c5: Reserve acked
+2020-07-24 11:27:19Z [Aggregator] Connection ON-28870ad5c5: All sub connections reserve held, can emit reserveConfirmed
+2020-07-24 11:27:19Z [opennsa.state] reserveHeld: {"type": "reservetrans", "cmd": "reserveHeld", "from": "ReserveChecking", "to": "ReserveHeld", "conid": "ON-28870ad5c5"}
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] ReserveCommit request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-28870ad5c5
+2020-07-24 11:27:19Z [Aggregator] reserveCommit: ON-28870ad5c5: {"type": "provider", "cmd": "reserveCommit", "conid": "ON-28870ad5c5", "corrid": "urn:uuid:a2776b7a-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [opennsa.state] reserveCommit: {"type": "reservetrans", "cmd": "reserveCommit", "from": "ReserveHeld", "to": "ReserveComitting", "conid": "ON-28870ad5c5"}
+2020-07-24 11:27:19Z [Aggregator] reserveConfirmed: ON-28870ad5c5: {"type": "provider", "cmd": "reserveConfirmed", "conid": "ON-28870ad5c5", "corrid": "urn:uuid:a27763c8-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [Aggregator] Connection ON-28870ad5c5: ReserveCommit messages acked
+2020-07-24 11:27:19Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveCommitConfirmed". Length: 809
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] ReserveCommit Confirmed for sub connection LA-9629735a12. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-07-24 11:27:19Z [Aggregator] reserveCommitConfirmed: LA-9629735a12: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "LA-9629735a12", "corrid": "urn:uuid:a278676e-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:19Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/reserveCommitConfirmed". Length: 809
+2020-07-24 11:27:19Z [Aggregator] 
+2020-07-24 11:27:19Z [Aggregator] ReserveCommit Confirmed for sub connection LA-7fdc3349f2. NSA urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa 
+2020-07-24 11:27:19Z [Aggregator] reserveCommitConfirmed: LA-7fdc3349f2: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "LA-7fdc3349f2", "corrid": "urn:uuid:a2783ad2-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:19Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:19Z [opennsa.state] reserved: {"type": "reservetrans", "cmd": "reserved", "from": "ReserveComitting", "to": "ReserveStart", "conid": "ON-28870ad5c5"}
+2020-07-24 11:27:19Z [HTTP] 10.250.0.1 - b'POST' b'/json/connections' b'HTTP/1.1' 201 36 vscode-restclient
+2020-07-24 11:27:19Z [Aggregator] reserveCommitConfirmed: ON-28870ad5c5: {"type": "provider", "cmd": "reserveCommitConfirmed", "conid": "ON-28870ad5c5", "corrid": "urn:uuid:a2806004-cda0-11ea-b325-02420afa0015"}
+2020-07-24 11:27:40Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:27:40Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3869
+2020-07-24 11:27:40Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:27:40Z [Aggregator] QueryRecursive : Still neeed 1/2 results to emit result
+2020-07-24 11:27:40Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:40Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3869
+2020-07-24 11:27:40Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:27:40Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-07-24 11:27:40Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:27:40Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5?recurse=1' b'HTTP/1.1' 200 4051 vscode-restclient
+2020-07-24 11:28:43Z [Aggregator] 
+2020-07-24 11:28:43Z [Aggregator] Provision request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-28870ad5c5
+2020-07-24 11:28:43Z [Aggregator] provision: ON-28870ad5c5: {"type": "provider", "cmd": "provision", "conid": "ON-28870ad5c5"}
+2020-07-24 11:28:43Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "ON-28870ad5c5"}
+2020-07-24 11:28:43Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "LA-9629735a12"}
+2020-07-24 11:28:43Z [opennsa.state] provisioning: {"type": "provisiontrans", "cmd": "provisioning", "from": "Released", "to": "Provisioning", "conid": "LA-7fdc3349f2"}
+2020-07-24 11:28:43Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/provisionConfirmed". Length: 801
+2020-07-24 11:28:43Z [Aggregator] 
+2020-07-24 11:28:43Z [Aggregator] Provision Confirmed for sub connection LA-7fdc3349f2. NSA urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa 
+2020-07-24 11:28:43Z [Aggregator] provisionConfirmed: LA-7fdc3349f2: {"type": "provider", "cmd": "provisionConfirmed", "conid": "LA-7fdc3349f2"}
+2020-07-24 11:28:43Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "LA-7fdc3349f2"}
+2020-07-24 11:28:43Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:28:43Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/provisionConfirmed". Length: 801
+2020-07-24 11:28:43Z [Aggregator] 
+2020-07-24 11:28:43Z [Aggregator] Provision Confirmed for sub connection LA-9629735a12. NSA urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa 
+2020-07-24 11:28:43Z [Aggregator] provisionConfirmed: LA-9629735a12: {"type": "provider", "cmd": "provisionConfirmed", "conid": "LA-9629735a12"}
+2020-07-24 11:28:43Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "LA-9629735a12"}
+2020-07-24 11:28:43Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:28:43Z [opennsa.state] provisioned: {"type": "provisiontrans", "cmd": "provisioned", "from": "Provisioning", "to": "Provisioned", "conid": "ON-28870ad5c5"}
+2020-07-24 11:28:43Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:28:43Z [Aggregator] provisionConfirmed: ON-28870ad5c5: {"type": "provider", "cmd": "provisionConfirmed", "conid": "ON-28870ad5c5"}
+2020-07-24 11:28:43Z [HTTP] 10.250.0.1 - b'PUT' b'/json/connections/ON-28870ad5c5?cmd=PROVISION' b'HTTP/1.1' 500 610 vscode-restclient
+2020-07-24 11:28:49Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1087
+2020-07-24 11:28:49Z [Aggregator] Data plane change for sub connection: LA-9629735a12 Active: True, version 0, consistent: True
+2020-07-24 11:28:49Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:28:49Z [Aggregator] Connection ON-28870ad5c5: Aggregated data plane status: Active False, version 0, consistent False
+2020-07-24 11:28:50Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1087
+2020-07-24 11:28:50Z [Aggregator] Data plane change for sub connection: LA-7fdc3349f2 Active: True, version 0, consistent: True
+2020-07-24 11:28:50Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:28:50Z [Aggregator] Connection ON-28870ad5c5: Aggregated data plane status: Active True, version 0, consistent True
+2020-07-24 11:29:21Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:21Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:24Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:24Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:25Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:25Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:28Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:28Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:28Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:28Z [Aggregator] QueryRecursive : Still neeed 1/2 results to emit result
+2020-07-24 11:29:28Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:28Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:28Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:28Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-07-24 11:29:28Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:28Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5?recurse=1' b'HTTP/1.1' 200 4066 vscode-restclient
+2020-07-24 11:29:30Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:30Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:34Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:34Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:36Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:36Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:36Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:36Z [Aggregator] QueryRecursive : Still neeed 1/2 results to emit result
+2020-07-24 11:29:36Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:36Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:36Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:36Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-07-24 11:29:36Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:36Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5?recurse=1' b'HTTP/1.1' 200 4066 vscode-restclient
+2020-07-24 11:29:42Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:42Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5' b'HTTP/1.1' 200 4 vscode-restclient
+2020-07-24 11:29:48Z [Aggregator] QueryRecursive request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:29:48Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:48Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab1.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:48Z [Aggregator] QueryRecursive : Still neeed 1/2 results to emit result
+2020-07-24 11:29:48Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:48Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/queryRecursiveConfirmed". Length: 3872
+2020-07-24 11:29:48Z [Aggregator] queryRecursiveConfirmed from urn:ogf:network:lab2.onsalab.cesnet.cz:2019:nsa.
+2020-07-24 11:29:48Z [Aggregator] QueryRecursive : Emitting to parent requester
+2020-07-24 11:29:48Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:29:48Z [HTTP] 10.250.0.1 - b'GET' b'/json/connections/ON-28870ad5c5?recurse=1' b'HTTP/1.1' 200 4066 vscode-restclient
+2020-07-24 11:30:14Z [Aggregator] 
+2020-07-24 11:30:14Z [Aggregator] Terminate request. NSA: urn:ogf:network:OpenNSA-CLI. Connection ID: ON-28870ad5c5
+2020-07-24 11:30:14Z [Aggregator] terminate: ON-28870ad5c5: {"type": "provider", "cmd": "terminate", "conid": "ON-28870ad5c5"}
+2020-07-24 11:30:14Z [opennsa.state] terminating: {"type": "lifecycletrans", "cmd": "terminating", "from": "Created", "to": "Terminating", "conid": "ON-28870ad5c5"}
+2020-07-24 11:30:20Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1088
+2020-07-24 11:30:20Z [Aggregator] Data plane change for sub connection: LA-9629735a12 Active: False, version 0, consistent: True
+2020-07-24 11:30:20Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:30:20Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/terminateConfirmed". Length: 801
+2020-07-24 11:30:20Z [Aggregator] terminateConfirmed: LA-9629735a12: {"type": "provider", "cmd": "terminateConfirmed", "conid": "LA-9629735a12"}
+2020-07-24 11:30:20Z [HTTP] 10.250.0.22 - b'POST' b'/NSI/services/RequesterService2-c762e076bce69c432eb6709b62a1aecdfa8d2a8f' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:30:20Z [Aggregator] Connection ON-28870ad5c5: Aggregated data plane status: Active False, version 0, consistent False
+2020-07-24 11:30:21Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/dataPlaneStateChange". Length: 1088
+2020-07-24 11:30:21Z [Aggregator] Data plane change for sub connection: LA-7fdc3349f2 Active: False, version 0, consistent: True
+2020-07-24 11:30:21Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:30:21Z [protocol.SOAPResource] Received SOAP request. Action: "http://schemas.ogf.org/nsi/2013/12/connection/service/terminateConfirmed". Length: 801
+2020-07-24 11:30:21Z [Aggregator] terminateConfirmed: LA-7fdc3349f2: {"type": "provider", "cmd": "terminateConfirmed", "conid": "LA-7fdc3349f2"}
+2020-07-24 11:30:21Z [HTTP] 10.250.0.23 - b'POST' b'/NSI/services/RequesterService2-d9a4a9cede11e85fd7bbe0fe5e4bae45dd72d063' b'HTTP/1.0' 200 712 Twisted PageGetter
+2020-07-24 11:30:21Z [Aggregator] Connection ON-28870ad5c5: All sub connections(2) acked terminated
+2020-07-24 11:30:21Z [Aggregator] Connection ON-28870ad5c5: Aggregated data plane status: Active False, version 0, consistent True
+2020-07-24 11:30:21Z [opennsa.state] terminated: {"type": "lifecycletrans", "cmd": "terminated", "from": "Terminating", "to": "Terminated", "conid": "ON-28870ad5c5"}
+2020-07-24 11:30:21Z [Aggregator] QuerySummary request from urn:ogf:network:OpenNSA-CLI. CID: ['ON-28870ad5c5']. GID: None
+2020-07-24 11:30:21Z [Aggregator] terminateConfirmed: ON-28870ad5c5: {"type": "provider", "cmd": "terminateConfirmed", "conid": "ON-28870ad5c5"}
+2020-07-24 11:30:21Z [HTTP] 10.250.0.1 - b'PUT' b'/json/connections/ON-28870ad5c5?cmd=TERMINATE' b'HTTP/1.1' 500 610 vscode-restclient
+2020-07-24 11:32:07Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 11:32:07Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 11:32:07Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 11:32:07Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 11:32:07Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 11:32:07Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 11:32:07Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 11:32:07Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 11:32:07Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 12:21:42Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 12:21:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 12:21:42Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 12:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 12:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 12:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 12:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 12:21:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 12:21:42Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 13:21:42Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 13:21:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 13:21:42Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 13:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 13:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 13:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 13:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 13:21:42Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 13:21:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 14:21:42Z [discovery.Fetcher] Fetching 2 documents.
+2020-07-24 14:21:42Z [discovery.Fetcher] Fetching http://10.250.0.22:9444/NSI/discovery.xml
+2020-07-24 14:21:42Z [discovery.Fetcher] Fetching http://10.250.0.23:9445/NSI/discovery.xml
+2020-07-24 14:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.22:9444/NSI/discovery.xml (942 bytes)
+2020-07-24 14:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab1.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 14:21:42Z [discovery.Fetcher] Got NSA description from http://10.250.0.23:9445/NSI/discovery.xml (942 bytes)
+2020-07-24 14:21:42Z [providerregistry] Skipping provider spawn for <NetworkServiceAgent lab2.onsalab.cesnet.cz:2019:nsa> (no change)
+2020-07-24 14:21:42Z [discovery.Fetcher] Adding port lab1.onsalab.cesnet.cz:2019:lab2 -> lab2.onsalab.cesnet.cz:2019:topology
+2020-07-24 14:21:42Z [discovery.Fetcher] Adding port lab2.onsalab.cesnet.cz:2019:lab1 -> lab1.onsalab.cesnet.cz:2019:topology
+2020-07-24 15:16:11Z [-] Received SIGTERM, shutting down.
+2020-07-24 15:16:11Z [twisted.web.server.Site] (TCP Port 9443 Closed)
+2020-07-24 15:16:11Z [-] Stopping factory <twisted.web.server.Site object at 0x7fb4c89e41d0>
+2020-07-24 15:16:11Z [-] Main loop terminated.
+2020-07-24 15:16:11Z [-] Server Shut Down.

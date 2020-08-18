@@ -1,0 +1,139 @@
+version: '3'
+services:
+
+  postgres_agg:
+    container_name: db-main
+    hostname: postgres
+    image: postgres_onsa:latest
+    volumes:
+      - dbdata:/var/lib/postgresql # use of docker volume ... 
+#       - ./db/:/var/lib/postgresql  # this is alternative for use of docker volume. The DB will be stored in a directory at docekr host ...
+    environment:
+      - POSTGRES_PASSWORD=onsa.dev
+      - POSTGRES_USER=opennsa
+      - POSTGRES_DB=opennsa
+      - PGDATA=/var/lib/postgresql/data-main/pgdata
+    ports:
+      - "5433:5432"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.101
+
+  postgres_lab1:
+    container_name: db-lab1
+    hostname: postgres
+    image: postgres_onsa:latest
+    volumes:
+      - dbdata:/var/lib/postgresql
+#       - ./db/:/var/lib/postgresql  # this is alternative for use of docker volume. The DB will be stored in a directory at docekr host ...
+    environment:
+      - POSTGRES_PASSWORD=onsa.dev
+      - POSTGRES_USER=opennsa
+      - POSTGRES_DB=opennsa
+      - PGDATA=/var/lib/postgresql/data-lab1/pgdata
+    ports:
+      - "5434:5432"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.102
+
+  postgres_lab2:
+    container_name: db-lab2
+    hostname: postgres
+    image: postgres_onsa:latest
+    volumes:
+      - dbdata:/var/lib/postgresql
+#       - ./db/:/var/lib/postgresql # this is alternative for use of docker volume. The DB will be stored in a directory at docekr host ...  
+    environment:
+      - POSTGRES_PASSWORD=onsa.dev
+      - POSTGRES_USER=opennsa
+      - POSTGRES_DB=opennsa
+      - PGDATA=/var/lib/postgresql/data-lab2/pgdata
+    ports:
+      - "5435:5432"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.103
+
+  onsa_agg:
+    container_name: onsa-agg
+    hostname: local-onsa-agg
+    image: opennsa_img-ptvsd:1 # The ptvsd package installed in the imagge which allows to use remote debug with Visual Studio Code. The requirement needs to installed by pip ... 
+    environment:
+      - PYTHONPATH=/opennsa
+      - OPENNSA=/opennsa
+      - REMOTE_DEBUG=0 # allows to use remote debug with Visual Studio Code
+    volumes:
+      - ./conf/agg/:/conf
+      - ./conf/wait/:/wait
+    extra_hosts:
+      - "dockerhost:10.250.0.1"
+    ports:
+      - "9502:9443"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.21
+    depends_on:
+      - "postgres_agg"
+      - "onsa_lab1"
+      - "onsa_lab2"
+    command: ["/wait/wait-for-it.sh", "postgres_agg:5432", "-t", "30", "--", "twistd", "--pidfile", "onsa_agg.pid", "-ny", "/conf/agg.tac"]
+
+  onsa_lab1:
+    container_name: onsa-lab1
+    hostname: local-onsa-lab1
+    image: opennsa_img-ptvsd:1 # The ptvsd package installed in the imagge which allows to use remote debug with Visual Studio Code. The requirement needs to installed by pip ... 
+    environment:
+      - PYTHONPATH=/opennsa
+      - OPENNSA=/opennsa
+      - REMOTE_DEBUG=0 # allows to use remote debug with Visual Studio Code
+    volumes:
+      - ./conf/lab1/:/conf
+      - ./conf/wait/:/wait
+    extra_hosts:
+      - "dockerhost:10.250.0.1"
+    ports:
+      - "9503:9444"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.22
+    depends_on:
+      - "postgres_lab1"
+    command: ["/wait/wait-for-it.sh", "postgres_lab1:5432", "-t", "30", "--", "twistd", "--pidfile", "onsa_lab1.pid", "-ny", "/conf/lab1.tac"]
+
+  onsa_lab2:
+    container_name: onsa-lab2
+    hostname: local-onsa-lab2
+    image: opennsa_img-ptvsd:1 # The ptvsd package installed in the imagge which allows to use remote debug with Visual Studio Code. The requirement needs to installed by pip ... 
+    environment:
+      - PYTHONPATH=/opennsa
+      - OPENNSA=/opennsa
+      - REMOTE_DEBUG=0  # allows to use remote debug with Visual Studio Code
+    volumes:
+      - ./conf/lab2/:/conf
+      - ./conf/wait/:/wait
+    extra_hosts:
+      - "dockerhost:10.250.0.1"
+    ports:
+      - "9504:9445"
+    networks:
+      vpcbr:
+        ipv4_address: 10.250.0.23
+    depends_on:
+      - "postgres_lab2"
+    command: ["/wait/wait-for-it.sh", "postgres_lab2:5432", "-t", "30", "--", "twistd", "--pidfile", "onsa_lab2.pid", "-ny", "/conf/lab2.tac"]
+
+
+
+volumes:
+   dbdata:
+     driver: local
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+      - subnet: "10.250.0.0/24"
+
+

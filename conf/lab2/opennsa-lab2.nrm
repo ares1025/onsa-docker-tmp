@@ -1,0 +1,12 @@
+# Local interfaces (no remote, used to connect servers)
+# type      name            remote                                          label           bandwith    interface   attr
+ethernet    port1           -                                               vlan:10-4000    1000        ge-1/0/1   -
+ethernet    port2           -                                               vlan:10-4000    1000        ge-1/0/2   -
+ethernet    port3           -                                               -    1000        ge-1/0/3   -
+
+
+
+# Real STPs
+# type      name       remote (network#port(-inprefix|-outprefix)      label           bandwith    interface   attr
+ethernet    lab1       lab1.onsalab.cesnet.cz:2019:topology#lab2-(in|out)      vlan:1-3999    10000        ge-1/0/4        -
+

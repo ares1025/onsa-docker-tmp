@@ -1,0 +1,8 @@
+[lab1.onsalab.cesnet.cz:2019:topology]
+ethernet    port1           -                                               vlan:10-4000    1000        ge-1/0/1   -
+ethernet    port2           -                                               vlan:10-4000    1000        ge-1/0/2   -
+ethernet    lab2       lab2.onsalab.cesnet.cz:2019:topology#lab1-(in|out)      mpls:1-3999    10000        vmpls1        -
+[lab2.onsalab.cesnet.cz:2019:topology]
+ethernet    port1           -                                               vlan:10-4000    1000        ge-1/0/1   -
+ethernet    port2           -                                               vlan:10-4000    1000        ge-1/0/2   -
+ethernet    lab1       lab1.onsalab.cesnet.cz:2019:topology#lab2-(in|out)      mpls:1-3999    10000        vmpls1        -
